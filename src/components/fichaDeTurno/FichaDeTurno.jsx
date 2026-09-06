@@ -1,4 +1,5 @@
 import React from 'react'
+import styles from './FichaDeTurno.module.css'
 
 export default function FichaDeTurno({cargando, error, turno}) {
     if (cargando) {
@@ -14,7 +15,7 @@ export default function FichaDeTurno({cargando, error, turno}) {
     }
 
     return (
-        <div>
+        <div className={turno.urgente ? styles.urgente : styles.normal}>
             <article>
                 <h3>{turno.paciente}</h3>
                 <p>Hora: {turno.hora}</p>
